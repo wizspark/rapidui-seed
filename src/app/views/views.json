@@ -1,0 +1,37 @@
+[
+  {
+    "id": "menu",
+    "viewType": 2
+  },
+  {
+    "id": "header",
+    "viewType": 1,
+    "childViews": [
+      "menu"
+    ]
+  },
+  {
+    "id": "sidebar",
+    "viewType": 7
+  },
+  {
+    "id": "table",
+    "viewType": 6
+  },
+  {
+    "id": "content",
+    "viewType": 3,
+    "childViews": [
+      "table"
+    ]
+  },
+  {
+    "id": "layout",
+    "viewType": 0,
+    "childViews": [
+      "header",
+      "sidebar",
+      "content"
+    ]
+  }
+]

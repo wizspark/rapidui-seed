@@ -1,0 +1,27 @@
+<td-layout-nav>
+  <div td-toolbar-content layout="row" layout-align="center center" flex>
+    <span>Admin</span>
+    <span flex></span>
+  </div>
+
+  <md-sidenav-container fullscreen class="td-layout-manage-list md-content" flex layout="row">
+    <md-sidenav align="start"
+                [opened]="media.registerQuery('gt-sm') | async"
+                [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
+                [disableClose]="(media.registerQuery('gt-sm') | async)"
+                [style.max-width]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'"
+                layout="column"
+                layout-fill
+                class="md-whiteframe-z1">
+      <div flex class="list md-content" cdkScrollable>
+        <app-sidebar></app-sidebar>
+      </div>
+    </md-sidenav>
+
+    <div layout="column" layout-fill class="md-content">
+      <div class="md-content" flex cdkScrollable>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </md-sidenav-container>
+</td-layout-nav>
