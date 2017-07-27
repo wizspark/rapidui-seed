@@ -1,2 +1,25 @@
-<!--<rapidui></rapidui>-->
-<app-layout></app-layout>
+<td-layout #layout
+           [mode]="(media.registerQuery('gt-md') | async) ? 'side' : 'over'"
+           [sidenavWidth]="(media.registerQuery('gt-md') | async) ? '257px' : '320px'">
+  <td-navigation-drawer sidenavTitle="Rapidui Business App" navigationRoute="/" flex color="primary">
+    <md-nav-list flex>
+      <a *ngFor="let item of routes"
+         md-list-item
+         (click)="!media.query('gt-md') && layout.close()"
+         [routerLink]="['/app', item.route]"
+         routerLinkActive="active">
+        <md-icon md-list-icon>{{item.icon}}</md-icon>
+        {{item.title}}
+      </a>
+    </md-nav-list>
+  </td-navigation-drawer>
+  <td-layout-nav toolbarTitle="Rapidui">
+    <router-outlet></router-outlet>
+    <td-layout-footer color="primary" tdMediaToggle="xs" [mediaClasses]="['text-center']">
+      <div layout-gt-xs="row" layout-align="start center">
+        <div class="md-caption">Copyright &copy; 2016 - 2017 Wizni Inc. All rights reserved</div>
+      </div>
+    </td-layout-footer>
+  </td-layout-nav>
+
+</td-layout>

@@ -1,14 +1,21 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "rapidui-seed"
+    "name": "wize"
   },
   "apps": [
     {
       "root": "src",
       "outDir": "dist",
       "assets": [
-        "assets",
+        {
+          "glob": "**/*",
+          "input": "../docs",
+          "output": "./docs/"
+        },
+        "app/assets",
+        "app/views",
+        "platform",
         "favicon.ico"
       ],
       "index": "index.html",
@@ -21,8 +28,8 @@
       "styles": [
         "styles.scss",
         "theme.scss",
-        "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-        "../node_modules/@covalent/core/common/platform.scss"
+        "../node_modules/@covalent/core/common/platform.scss",
+        "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
       ],
       "scripts": [
         "../node_modules/hammerjs/hammer.min.js",
@@ -46,9 +53,6 @@
     },
     {
       "project": "src/tsconfig.spec.json"
-    },
-    {
-      "project": "e2e/tsconfig.e2e.json"
     }
   ],
   "test": {
@@ -57,7 +61,10 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
-    "component": {}
+    "styleExt": "scss",
+    "serve": {
+      "port": 4200,
+      "host": "localhost"
+    }
   }
 }

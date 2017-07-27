@@ -1,37 +1,38 @@
 [
   {
-    "id": "menu",
-    "viewType": 2
+    "id": "accounts",
+    "route": "accounts",
+    "viewType": -1,
+    "viewName": "Account"
   },
   {
-    "id": "header",
-    "viewType": 1,
-    "childViews": [
-      "menu"
-    ]
+    "id": "leads",
+    "route": "leads",
+    "viewType": -1,
+    "viewName": "Lead"
   },
   {
-    "id": "sidebar",
-    "viewType": 7
+    "id": "opportunities",
+    "route": "opportunities",
+    "viewType": -1,
+    "viewName": "Opportunity"
   },
   {
-    "id": "table",
-    "viewType": 6
-  },
-  {
-    "id": "content",
-    "viewType": 3,
-    "childViews": [
-      "table"
-    ]
-  },
-  {
-    "id": "layout",
+    "id": "audit",
+    "route": "audit",
     "viewType": 0,
-    "childViews": [
-      "header",
-      "sidebar",
-      "content"
-    ]
+    "viewName": "Audit"
+  },
+  {
+    "id": "admin",
+    "route": "admin",
+    "viewType": 0,
+    "viewName": "Admin"
+  },
+  {
+    "id": "report",
+    "route": "report",
+    "viewType": 0,
+    "viewName": "Report"
   }
 ]

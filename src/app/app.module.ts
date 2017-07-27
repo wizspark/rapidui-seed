@@ -1,36 +1,54 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import {
+  MdAutocompleteModule,
   MdButtonModule,
+  MdButtonToggleModule,
   MdCardModule,
   MdCoreModule,
   MdGridListModule,
   MdIconModule,
+  MdInputModule,
   MdListModule,
   MdMenuModule,
+  MdProgressBarModule,
+  MdSelectModule,
+  MdSlideToggleModule,
   MdTabsModule,
   MdToolbarModule,
   MdTooltipModule
 } from '@angular/material';
 import {
+  CovalentChipsModule,
+  CovalentCommonModule,
+  CovalentDataTableModule,
+  CovalentDialogsModule,
   CovalentExpansionPanelModule,
+  CovalentFileModule,
+  CovalentJsonFormatterModule,
   CovalentLayoutModule,
+  CovalentLoadingModule,
+  CovalentMediaModule,
   CovalentMenuModule,
-  CovalentNotificationsModule
+  CovalentMessageModule,
+  CovalentNotificationsModule,
+  CovalentPagingModule,
+  CovalentSearchModule,
+  CovalentStepsModule
 } from '@covalent/core';
 import { CovalentHttpModule } from '@covalent/http';
 import { CovalentHighlightModule } from '@covalent/highlight';
 import { CovalentMarkdownModule } from '@covalent/markdown';
 import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
-import { RapiduiRoutingModule } from '@wize/rapidui-core/rapidui-routing.module';
+import { AppComponent } from './app.component';
+import { SelectivePreloadingStrategyService } from './selective-preloading-strategy.service';
+import { AppRoutingModule } from './app.routes';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { RapiduiModule } from '@wize/rapidui-core';
-import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -43,7 +61,6 @@ import { CoreModule } from './core/core.module';
     BrowserModule,
     HttpModule,
     JsonpModule,
-
     /** Material Modules */
     MdCoreModule,
     MdButtonModule,
@@ -56,24 +73,46 @@ import { CoreModule } from './core/core.module';
     MdGridListModule,
     MdTooltipModule,
 
+    MdInputModule,
+    MdSelectModule,
+    MdButtonToggleModule,
+    MdSlideToggleModule,
+    MdProgressBarModule,
+    MdAutocompleteModule,
+
     /** Covalent Modules */
     CovalentLayoutModule,
     CovalentExpansionPanelModule,
     CovalentNotificationsModule,
     CovalentMenuModule,
+    CovalentMediaModule,
     CovalentHttpModule.forRoot(),
     CovalentHighlightModule,
     CovalentMarkdownModule,
     CovalentDynamicFormsModule,
+    CovalentCommonModule,
+    CovalentStepsModule,
+    CovalentDialogsModule,
+    CovalentLoadingModule,
+    CovalentSearchModule,
+    CovalentPagingModule,
+    CovalentFileModule,
+    CovalentChipsModule,
+    CovalentJsonFormatterModule,
+    CovalentDataTableModule,
+    CovalentMessageModule,
 
     /** Rapidui Modules */
-    RapiduiRoutingModule,
+    // RapiduiRoutingModule,
     RapiduiModule,
 
-    // App modules
-    CoreModule
+    /** App Modules */
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    SelectivePreloadingStrategyService
+  ],
+  entryComponents: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
