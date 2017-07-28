@@ -103,7 +103,6 @@ import { RapiduiModule } from '@wize/rapidui-core';
     CovalentMessageModule,
 
     /** Rapidui Modules */
-    // RapiduiRoutingModule,
     RapiduiModule,
 
     /** App Modules */

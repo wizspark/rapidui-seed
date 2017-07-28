@@ -5,7 +5,7 @@ import { SelectivePreloadingStrategyService } from './selective-preloading-strat
 @NgModule({
   imports: [
     RouterModule.forRoot([
-        {path: '', loadChildren: '../../node_modules/platform/rapidui-core/rapidui.module#RapiduiModule'},
+        {path: '', loadChildren: '../../../node_modules/platform/rapidui-core/rapidui.module#RapiduiModule'},
         {path: '**', redirectTo: '/'}
       ],
       {
