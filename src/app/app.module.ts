@@ -49,6 +49,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RapiduiModule } from '@wize/rapidui-core';
+import { AuthModule } from '@wize/quiver-auth';
+import { environment } from './environment';
+import { AdminModule } from '@wize/quiver-admin';
+import { APP_PROVIDERS } from './root/core.resolver';
+import { CoreHttpService } from './root/core.http.service';
+import { HttpHandlerService } from './root/http.handler.service';
 
 @NgModule({
   declarations: [
@@ -103,14 +109,19 @@ import { RapiduiModule } from '@wize/rapidui-core';
     CovalentMessageModule,
 
     /** Rapidui Modules */
-    // RapiduiRoutingModule,
     RapiduiModule,
+
+    /** Quiver Modules */
+    AuthModule.forRoot(environment),
+    AdminModule.forRoot(APP_PROVIDERS),
 
     /** App Modules */
     AppRoutingModule
   ],
   providers: [
-    SelectivePreloadingStrategyService
+    SelectivePreloadingStrategyService,
+    CoreHttpService,
+    HttpHandlerService
   ],
   entryComponents: [],
   bootstrap: [AppComponent]

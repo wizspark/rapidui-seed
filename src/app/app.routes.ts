@@ -1,11 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SelectivePreloadingStrategyService } from './selective-preloading-strategy.service';
+import { AuthGuard, UserRolesResolve } from '@wize/quiver-auth';
 
 @NgModule({
   imports: [
     RouterModule.forRoot([
-        {path: '', loadChildren: '../../node_modules/platform/rapidui-core/rapidui.module#RapiduiModule'},
+        /*
+        {
+            path: '',
+            canActivate: [AuthGuard, UserRolesResolve],
+            loadChildren: '../../../node_modules/@wize/quiver-admin/quiver-admin.module#QuiverAdminModule'
+         },
+         */
+        {
+          path: '',
+          canActivate: [AuthGuard, UserRolesResolve],
+          loadChildren: '../../../node_modules/@wize/rapidui-core/rapidui.module#RapiduiModule'
+        },
         {path: '**', redirectTo: '/'}
       ],
       {
