@@ -30,6 +30,8 @@
     "@covalent/highlight": "^1.0.0-beta.5-1",
     "@covalent/http": "^1.0.0-beta.5-1",
     "@covalent/markdown": "^1.0.0-beta.5-1",
+    "@wize/quiver-admin": "0.0.0-beta.2",
+    "@wize/quiver-auth": "0.0.0-beta.2",
     "@wize/rapidui-core": "0.0.0-beta.3",
     "@wize/rapidui-parser": "0.0.0-beta.3",
     "@wize/rapidui-renderer": "0.0.0-beta.3",
