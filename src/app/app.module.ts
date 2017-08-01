@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { AuthModule } from '@wize/quiver-auth';
 import { AdminModule } from '@wize/quiver-admin';
-import { APP_PROVIDERS } from './root/core.resolver';
+import { APP_PROVIDERS } from './core.resolver';
 import { environment } from './environment';
 import { AppRoutingModule } from './app.routes';
 import { RapiduiModule } from '@wize/rapidui-core';
@@ -56,8 +55,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutComponent,
-    DashboardComponent
+    LayoutComponent
   ],
   imports: [
     BrowserAnimationsModule,

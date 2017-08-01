@@ -5,7 +5,6 @@ import { TdMediaService } from '@covalent/core';
 import { Http } from '@angular/http';
 import { Router } from '@angular/router';
 import { environment } from '../environment';
-import { getDirection } from '../utilities/direction';
 import { RapiduiConfig } from '@wize/rapidui-core';
 
 @Component({
@@ -15,7 +14,6 @@ import { RapiduiConfig } from '@wize/rapidui-core';
 })
 export class LayoutComponent implements OnInit, AfterViewInit {
   routes: Object[];
-  dir: string;
   views: Array<any>;
 
   constructor(private iconRegistry: MdIconRegistry,
@@ -32,9 +30,6 @@ export class LayoutComponent implements OnInit, AfterViewInit {
     // Register svgs
     this.iconRegistry.addSvgIconInNamespace('assets', 'teradata',
       this.domSanitizer.bypassSecurityTrustResourceUrl('app/assets/icons/teradata.svg'));
-
-    // set direction
-    this.dir = getDirection();
   }
 
   ngOnInit() {

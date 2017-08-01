@@ -5,7 +5,6 @@ import { LayoutComponent } from './layout/layout.component';
 import { rapiduiRoutes } from '@wize/rapidui-core';
 import { AuthGuard } from '@wize/quiver-auth';
 import { adminRoutes } from '@wize/quiver-admin';
-import { DashboardComponent } from './dashboard/dashboard.component';
 
 rapiduiRoutes[0].children.unshift(...adminRoutes);
 
@@ -17,8 +16,8 @@ rapiduiRoutes[0].children.unshift(...adminRoutes);
           component: LayoutComponent,
           canActivate: [AuthGuard/*, UserRolesResolve*/],
           children: [
-            { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-            { path: 'dashboard', component: DashboardComponent },
+            // { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+            // { path: 'dashboard', component: DashboardComponent },
             ...rapiduiRoutes
           ]
         },
