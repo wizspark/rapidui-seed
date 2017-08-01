@@ -3,9 +3,9 @@ import { MdIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { TdMediaService } from '@covalent/core';
 import { Http } from '@angular/http';
-import { Router } from '@angular/router';
 import { environment } from '../environment';
 import { RapiduiConfig } from '@wize/rapidui-core';
+import { AuthService } from '@wize/quiver-auth';
 
 @Component({
   selector: 'app-layout',
@@ -22,7 +22,7 @@ export class LayoutComponent implements OnInit, AfterViewInit {
               private changeDetectorRef: ChangeDetectorRef,
               private rapiduiConfig: RapiduiConfig,
               private http: Http,
-              private router: Router) {
+              private authService: AuthService) {
 
     this.rapiduiConfig.SERVER_URI = environment.host;
     this.rapiduiConfig.AUTH0_OPTIONS = environment.auth0Options;
@@ -53,5 +53,9 @@ export class LayoutComponent implements OnInit, AfterViewInit {
         title: r.viewName
       });
     });
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }

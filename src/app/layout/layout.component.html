@@ -14,6 +14,15 @@
     </md-nav-list>
   </td-navigation-drawer>
   <td-layout-nav toolbarTitle="Rapidui">
+    <div td-toolbar-content layout="row" layout-align="center center" flex>
+      <span flex></span>
+      <button md-icon-button [md-menu-trigger-for]="menu">
+        <md-icon>account_circle</md-icon>
+      </button>
+      <md-menu x-position="before" #menu="mdMenu" mdTooltip="User">
+        <button md-menu-item (click)="logout()">Logout</button>
+      </md-menu>
+    </div>
     <router-outlet></router-outlet>
     <td-layout-footer color="primary" tdMediaToggle="xs" [mediaClasses]="['text-center']">
       <div layout-gt-xs="row" layout-align="start center">
