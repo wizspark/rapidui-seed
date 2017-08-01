@@ -13,9 +13,8 @@
           "input": "../docs",
           "output": "./docs/"
         },
-        "app/assets",
+        "assets",
         "app/views",
-        "platform",
         "favicon.ico"
       ],
       "index": "index.html",
