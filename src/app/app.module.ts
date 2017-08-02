@@ -4,11 +4,11 @@ import { LayoutComponent } from './layout/layout.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { AuthModule } from '@wize/quiver-auth';
 import { AdminModule } from '@wize/quiver-admin';
-import { APP_PROVIDERS } from './core.resolver';
+import { APP_PROVIDERS } from './services/core.resolver';
 import { environment } from './environment';
 import { AppRoutingModule } from './app.routes';
 import { RapiduiModule } from '@wize/rapidui-core';
-import { SelectivePreloadingStrategyService } from './selective-preloading-strategy.service';
+import { SelectivePreloadingStrategyService } from './services/selective-preloading-strategy.service';
 import {
   CovalentChipsModule,
   CovalentCommonModule,
@@ -51,7 +51,7 @@ import { CovalentHighlightModule } from '@covalent/highlight';
 import { CovalentMarkdownModule } from '@covalent/markdown';
 import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { AuthInterceptor } from './auth.interceptor';
+import { AuthInterceptor } from './services/auth.interceptor';
 
 @NgModule({
   declarations: [

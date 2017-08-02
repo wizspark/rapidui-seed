@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { SelectivePreloadingStrategyService } from './selective-preloading-strategy.service';
+import { SelectivePreloadingStrategyService } from './services/selective-preloading-strategy.service';
 import { LayoutComponent } from './layout/layout.component';
 import { rapiduiRoutes } from '@wize/rapidui-core';
 import { AuthGuard } from '@wize/quiver-auth';

@@ -1,6 +1,6 @@
 import { AdminConfig } from '@wize/quiver-admin';
 import { Injectable } from '@angular/core';
-import { environment } from './environment';
+import { environment } from '../environment';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable()
