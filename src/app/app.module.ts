@@ -50,7 +50,8 @@ import { CovalentHttpModule } from '@covalent/http';
 import { CovalentHighlightModule } from '@covalent/highlight';
 import { CovalentMarkdownModule } from '@covalent/markdown';
 import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
-import { HttpModule, JsonpModule } from '@angular/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AuthInterceptor } from './auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -62,8 +63,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
     // CommonModule,
     // FormsModule,
     BrowserModule,
-    HttpModule,
-    JsonpModule,
+    HttpClientModule,
     /** Material Modules */
     MdCoreModule,
     MdButtonModule,
@@ -114,6 +114,11 @@ import { HttpModule, JsonpModule } from '@angular/http';
     AppRoutingModule
   ],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    },
     SelectivePreloadingStrategyService
   ],
   entryComponents: [],

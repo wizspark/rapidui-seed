@@ -1,11 +1,11 @@
 import { AdminConfig } from '@wize/quiver-admin';
 import { Injectable } from '@angular/core';
 import { environment } from './environment';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class CustomAdminConfig {
-  constructor(protected http: Http) {
+  constructor(protected http: HttpClient) {
   }
 
   getHost() {

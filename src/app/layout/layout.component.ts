@@ -2,10 +2,10 @@ import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/co
 import { MdIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { TdMediaService } from '@covalent/core';
-import { Http } from '@angular/http';
 import { environment } from '../environment';
 import { RapiduiConfig } from '@wize/rapidui-core';
 import { AuthService } from '@wize/quiver-auth';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-layout',
@@ -21,7 +21,7 @@ export class LayoutComponent implements OnInit, AfterViewInit {
               public media: TdMediaService,
               private changeDetectorRef: ChangeDetectorRef,
               private rapiduiConfig: RapiduiConfig,
-              private http: Http,
+              private http: HttpClient,
               private authService: AuthService) {
 
     this.rapiduiConfig.SERVER_URI = environment.host;
@@ -33,8 +33,8 @@ export class LayoutComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this.http.get('/app/views/views.json').subscribe((res) => {
-      this.views = res.json();
+    this.http.get('/app/views/views.json').subscribe((res: any[]) => {
+      this.views = res;
       this.formRoutes();
     });
   }
