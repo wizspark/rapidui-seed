@@ -52,6 +52,7 @@ import { CovalentMarkdownModule } from '@covalent/markdown';
 import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './services/auth.interceptor';
+import { RapiduiCommonModule } from '@wize/rapidui-common';
 
 @NgModule({
   declarations: [
@@ -109,6 +110,7 @@ import { AuthInterceptor } from './services/auth.interceptor';
     AuthModule.forRoot(environment),
     AdminModule.forRoot(APP_PROVIDERS),
     RapiduiModule,
+    RapiduiCommonModule,
 
     /** App Modules */
     AppRoutingModule

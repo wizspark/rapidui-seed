@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { SelectivePreloadingStrategyService } from './services/selective-preloading-strategy.service';
 import { LayoutComponent } from './layout/layout.component';
 import { rapiduiRoutes } from '@wize/rapidui-core';
-import { AuthGuard } from '@wize/quiver-auth';
+import { AuthGuard, UserRolesResolve } from '@wize/quiver-auth';
 import { adminRoutes } from '@wize/quiver-admin';
 
 rapiduiRoutes[0].children.unshift(...adminRoutes);
@@ -14,14 +14,12 @@ rapiduiRoutes[0].children.unshift(...adminRoutes);
         {
           path: '',
           component: LayoutComponent,
-          canActivate: [AuthGuard/*, UserRolesResolve*/],
+          canActivate: [AuthGuard, UserRolesResolve],
           children: [
-            // { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-            // { path: 'dashboard', component: DashboardComponent },
             ...rapiduiRoutes
           ]
         },
-        { path: '**', redirectTo: '/' }
+        {path: '**', redirectTo: '/'}
       ],
       {
         useHash: true,

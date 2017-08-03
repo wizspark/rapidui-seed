@@ -3,9 +3,10 @@ import { MdIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { TdMediaService } from '@covalent/core';
 import { environment } from '../environment';
-import { RapiduiConfig } from '@wize/rapidui-core';
 import { AuthService } from '@wize/quiver-auth';
 import { HttpClient } from '@angular/common/http';
+import { TitleService } from '@wize/rapidui-common/common/title.service';
+import { RapiduiConfig } from '@wize/rapidui-common';
 
 @Component({
   selector: 'app-layout',
@@ -18,14 +19,16 @@ export class LayoutComponent implements OnInit, AfterViewInit {
 
   constructor(private iconRegistry: MdIconRegistry,
               private domSanitizer: DomSanitizer,
-              public media: TdMediaService,
+              private media: TdMediaService,
               private changeDetectorRef: ChangeDetectorRef,
               private rapiduiConfig: RapiduiConfig,
+              private titleService: TitleService,
               private http: HttpClient,
               private authService: AuthService) {
 
     this.rapiduiConfig.SERVER_URI = environment.host;
     this.rapiduiConfig.AUTH0_OPTIONS = environment.auth0Options;
+    this.titleService.observer.next('Rapidui');
 
     // Register svgs
     this.iconRegistry.addSvgIconInNamespace('assets', 'teradata',
