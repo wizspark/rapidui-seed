@@ -52,7 +52,14 @@ import { CovalentMarkdownModule } from '@covalent/markdown';
 import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './services/auth.interceptor';
-import { RapiduiCommonModule } from '@wize/rapidui-common';
+import { RapiduiCommonModule, RAPIDUI_CONFIG, RapiduiConfig, Auth0Config } from '@wize/rapidui-common';
+const rapiduiConfig: RapiduiConfig = {
+  SERVER_URI: environment.host,
+  AUTH0_OPTIONS: <Auth0Config>{
+    clientId: environment.auth0Options.clientId,
+    domain: environment.auth0Options.domain
+  }
+};
 
 @NgModule({
   declarations: [
@@ -121,6 +128,7 @@ import { RapiduiCommonModule } from '@wize/rapidui-common';
       useClass: AuthInterceptor,
       multi: true
     },
+    {provide: RAPIDUI_CONFIG, useValue: rapiduiConfig},
     SelectivePreloadingStrategyService
   ],
   entryComponents: [],

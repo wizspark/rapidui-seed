@@ -4,7 +4,7 @@
 
 export const environment: any = {
   production: false,
-  host: 'http://localhost:8080',
+  host: 'http://localhost:5000',
   auth0Options: {
     clientId: 'jNn1V2ORu1rN1TzgEv1SvDldgnz18W0Y',
     domain: 'anjanikumar2109.auth0.com'
