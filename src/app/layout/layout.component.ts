@@ -1,8 +1,8 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { MdIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
-import { TdMediaService } from '@covalent/core';
-import { AuthService } from '@wize/quiver-auth';
+import { MediaService } from '@rapidui/quiver-core';
+//import { AuthService } from '@wize/quiver-auth';
 import { HttpClient } from '@angular/common/http';
 import { TitleService } from '@wize/rapidui-common';
 
@@ -17,11 +17,10 @@ export class LayoutComponent implements OnInit, AfterViewInit {
 
   constructor(private iconRegistry: MdIconRegistry,
               private domSanitizer: DomSanitizer,
-              private media: TdMediaService,
+              private media: MediaService,
               private changeDetectorRef: ChangeDetectorRef,
               private titleService: TitleService,
-              private http: HttpClient,
-              private authService: AuthService) {
+              private http: HttpClient) {
 
     this.titleService.observer.next('Rapidui');
 
@@ -54,6 +53,6 @@ export class LayoutComponent implements OnInit, AfterViewInit {
   }
 
   logout() {
-    this.authService.logout();
+    //this.authService.logout();
   }
 }

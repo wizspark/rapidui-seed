@@ -1,8 +1,6 @@
-<td-layout #layout
-           [mode]="(media.registerQuery('gt-md') | async) ? 'side' : 'over'"
-           [sidenavWidth]="(media.registerQuery('gt-md') | async) ? '257px' : '320px'">
-  <td-navigation-drawer sidenavTitle="Rapidui Business App" navigationRoute="/" flex color="primary">
-    <md-nav-list flex>
+<rui-layout>
+  <rui-navigation-drawer color="primary" flex sidenavTitle="Rapidui Business App" logo="assets:teradata" name="Firstname Lastname" email="firstname.lastname@company.com">
+    <md-nav-list>
       <a *ngFor="let item of routes"
          md-list-item
          (click)="!media.query('gt-md') && layout.close()"
@@ -12,22 +10,30 @@
         {{item.title}}
       </a>
     </md-nav-list>
-  </td-navigation-drawer>
-  <td-layout-nav toolbarTitle="{{titleService.title}}">
-    <div td-toolbar-content layout="row" layout-align="center center" flex>
-      <span flex></span>
-      <button md-icon-button [md-menu-trigger-for]="menu">
-        <md-icon>account_circle</md-icon>
-      </button>
-      <md-menu x-position="before" #menu="mdMenu" mdTooltip="User">
-        <button md-menu-item (click)="logout()">Logout</button>
-      </md-menu>
+    <div rui-navigation-drawer-menu>
+      <md-nav-list>
+        <a *ngFor="let item of usermenu" md-list-item><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
+      </md-nav-list>
     </div>
-    <router-outlet></router-outlet>
-    <td-layout-footer color="primary" tdMediaToggle="xs" [mediaClasses]="['text-center']">
-      <div layout-gt-xs="row" layout-align="start center">
-        <div class="md-caption">Copyright &copy; 2016 - 2017 Wizni Inc. All rights reserved</div>
+  </rui-navigation-drawer>
+  <rui-layout-nav color="primary" toolbarTitle="{{titleService.title}}">
+    <div rui-toolbar-content layout="row" layout-align="start center" flex>
+      <button md-icon-button rui-menu-button tdLayoutToggle>
+        <md-icon>menu</md-icon>
+      </button>
+      <md-icon [routerLink]="['/']" class="md-icon-logo cursor-pointer" svgIcon="assets:teradata"></md-icon>
+      <span [routerLink]="['/']" class="cursor-pointer">Sample</span>
+      <span flex></span>
+    </div>
+    <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+      <div flex-gt-sm="100">
+        <router-outlet></router-outlet>
       </div>
-    </td-layout-footer>
-  </td-layout-nav>
-</td-layout>
+    </div>
+    <rui-layout-footer>
+      <div layout="row" layout-align="start center">
+        <span class="md-caption">Copyright &copy; 2016 - 2017 Wizni Inc. All rights reserved</span>
+      </div>
+    </rui-layout-footer>
+  </rui-layout-nav>
+</rui-layout>

@@ -2,31 +2,31 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { AuthModule } from '@wize/quiver-auth';
-import { AdminModule } from '@wize/quiver-admin';
+//import { AuthModule } from '@wize/quiver-auth';
+//import { AdminModule } from '@wize/quiver-admin';
 import { APP_PROVIDERS } from './services/core.resolver';
 import { environment } from './environment';
 import { AppRoutingModule } from './app.routes';
 import { RapiduiModule } from '@wize/rapidui-core';
 import { SelectivePreloadingStrategyService } from './services/selective-preloading-strategy.service';
 import {
-  CovalentChipsModule,
-  CovalentCommonModule,
-  CovalentDataTableModule,
-  CovalentDialogsModule,
-  CovalentExpansionPanelModule,
-  CovalentFileModule,
-  CovalentJsonFormatterModule,
-  CovalentLayoutModule,
-  CovalentLoadingModule,
-  CovalentMediaModule,
-  CovalentMenuModule,
-  CovalentMessageModule,
-  CovalentNotificationsModule,
-  CovalentPagingModule,
-  CovalentSearchModule,
-  CovalentStepsModule
-} from '@covalent/core';
+  QuiverChipsModule,
+  QuiverCommonModule,
+  QuiverDataTableModule,
+  QuiverDialogsModule,
+  QuiverExpansionPanelModule,
+  QuiverFileModule,
+  QuiverJsonFormatterModule,
+  QuiverLayoutModule,
+  QuiverLoadingModule,
+  QuiverMediaModule,
+  QuiverMenuModule,
+  QuiverMessageModule,
+  QuiverNotificationsModule,
+  QuiverPagingModule,
+  QuiverSearchModule,
+  QuiverStepsModule
+} from '@rapidui/quiver-core';
 import {
   MdAutocompleteModule,
   MdButtonModule,
@@ -46,10 +46,10 @@ import {
   MdTooltipModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CovalentHttpModule } from '@covalent/http';
-import { CovalentHighlightModule } from '@covalent/highlight';
-import { CovalentMarkdownModule } from '@covalent/markdown';
-import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
+import { QuiverHttpModule } from '@rapidui/quiver-http';
+import { QuiverHighlightModule } from '@rapidui/quiver-highlight';
+import { QuiverMarkdownModule } from '@rapidui/quiver-markdown';
+import { QuiverDynamicFormsModule } from '@rapidui/quiver-forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './services/auth.interceptor';
 import { RapiduiCommonModule, RAPIDUI_CONFIG, RapiduiConfig, Auth0Config } from '@wize/rapidui-common';
@@ -91,31 +91,31 @@ const rapiduiConfig: RapiduiConfig = {
     MdProgressBarModule,
     MdAutocompleteModule,
 
-    /** Covalent Modules */
-    CovalentLayoutModule,
-    CovalentExpansionPanelModule,
-    CovalentNotificationsModule,
-    CovalentMenuModule,
-    CovalentMediaModule,
-    CovalentHttpModule.forRoot(),
-    CovalentHighlightModule,
-    CovalentMarkdownModule,
-    CovalentDynamicFormsModule,
-    CovalentCommonModule,
-    CovalentStepsModule,
-    CovalentDialogsModule,
-    CovalentLoadingModule,
-    CovalentSearchModule,
-    CovalentPagingModule,
-    CovalentFileModule,
-    CovalentChipsModule,
-    CovalentJsonFormatterModule,
-    CovalentDataTableModule,
-    CovalentMessageModule,
+    /** Quiver Modules */
+    QuiverLayoutModule,
+    QuiverExpansionPanelModule,
+    QuiverNotificationsModule,
+    QuiverMenuModule,
+    QuiverMediaModule,
+    QuiverHttpModule.forRoot(),
+    QuiverHighlightModule,
+    QuiverMarkdownModule,
+    QuiverDynamicFormsModule,
+    QuiverCommonModule,
+    QuiverStepsModule,
+    QuiverDialogsModule,
+    QuiverLoadingModule,
+    QuiverSearchModule,
+    QuiverPagingModule,
+    QuiverFileModule,
+    QuiverChipsModule,
+    QuiverJsonFormatterModule,
+    QuiverDataTableModule,
+    QuiverMessageModule,
 
     /** Rapidui Modules */
-    AuthModule.forRoot(environment),
-    AdminModule.forRoot(APP_PROVIDERS),
+    //AuthModule.forRoot(environment),
+    //AdminModule.forRoot(APP_PROVIDERS),
     RapiduiModule,
     RapiduiCommonModule,
 

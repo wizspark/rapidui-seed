@@ -3,9 +3,9 @@ import { RouterModule } from '@angular/router';
 import { SelectivePreloadingStrategyService } from './services/selective-preloading-strategy.service';
 import { LayoutComponent } from './layout/layout.component';
 import { rapiduiRoutes } from '@wize/rapidui-core';
-import { adminRoutes } from '@wize/quiver-admin';
+//import { adminRoutes } from '@wize/quiver-admin';
 
-rapiduiRoutes[0].children.unshift(...adminRoutes);
+//rapiduiRoutes[0].children.unshift(...adminRoutes);
 
 @NgModule({
   imports: [

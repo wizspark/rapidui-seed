@@ -1,7 +1,7 @@
 @import '~@angular/material/theming';
-@import '~@covalent/core/theming/all-theme';
-@import '~@covalent/markdown/markdown-theme';
-@import '~@covalent/highlight/highlight-theme';
+@import '~@rapidui/quiver-core/theming/all-theme';
+@import '~@rapidui/quiver-markdown/markdown-theme';
+@import '~@rapidui/quiver-highlight/highlight-theme';
 // Plus imports for other components in your app.
 
 // Include the base styles for Angular Material core. We include this here so that you only
@@ -57,9 +57,9 @@ $theme: mat-light-theme($primary, $accent, $warn);
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($theme);
-@include covalent-theme($theme);
-@include covalent-markdown-theme($theme);
-@include covalent-highlight-theme(); // OR @import '~highlight.js/styles/vs.css';
+@include quiver-theme($theme);
+@include quiver-markdown-theme($theme);
+@include quiver-highlight-theme(); // OR @import '~highlight.js/styles/vs.css';
 
 // Alt theme
 .theme-alt {
@@ -68,7 +68,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
   $warn-alt: mat-palette($mat-red, 600);
   $theme-alt: mat-light-theme($primary-alt, $accent-alt, $warn-alt);
   @include angular-material-theme($theme-alt);
-  @include covalent-theme($theme-alt);
+  @include quiver-theme($theme-alt);
 }
 
 // Dark theme
@@ -78,7 +78,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
   $warn-dark: mat-palette($mat-red, 600);
   $theme-dark: mat-dark-theme($primary-dark, $accent-dark, $warn-dark);
   @include angular-material-theme($theme-dark);
-  @include covalent-theme($theme-dark);
+  @include quiver-theme($theme-dark);
 }
 
 // Subpage themes
@@ -88,7 +88,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
   $warn-docs: mat-palette($mat-red, 600);
   $theme-docs: mat-light-theme($primary-docs, $accent-docs, $warn-docs);
   @include angular-material-theme($theme-docs);
-  @include covalent-theme($theme-docs);
+  @include quiver-theme($theme-docs);
 }
 
 // Custom theme examples
@@ -100,7 +100,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
   $blue-orange: mat-light-theme($primary2, $accent2, $warn2);
 
   @include angular-material-theme($blue-orange);
-  @include covalent-theme($blue-orange);
+  @include quiver-theme($blue-orange);
 }
 
 .blue-grey-deep-orange {
@@ -111,7 +111,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
   $blue-grey-deep-orange: mat-light-theme($primary3, $accent3, $warn3);
 
   @include angular-material-theme($blue-grey-deep-orange);
-  @include covalent-theme($blue-grey-deep-orange);
+  @include quiver-theme($blue-grey-deep-orange);
 }
 
 /* ------------------------------------------------------------------------------- */
